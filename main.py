@@ -4,6 +4,23 @@ import aiohttp
 import random
 from discord.ext import commands
 from urllib.parse import urlparse
+from flask import Flask
+from threading import Thread
+
+# Flask server untuk health check
+flask_app = Flask(__name__)
+@flask_app.route('/')
+def home():
+    return "Bot is running!"
+
+def run_flask():
+    flask_app.run(host='0.0.0.0', port=8080)
+
+# Jalankan Flask saat bot ready
+@bot.event
+async def on_ready():
+    Thread(target=run_flask).start()
+    print(f"Bot {bot.user} is online!")
 
 # Bot Setup
 TOKEN = os.getenv("DISCORD_TOKEN")

@@ -6,6 +6,20 @@ from discord.ext import commands
 from urllib.parse import urlparse
 from flask import Flask
 from threading import Thread
+from flask import Flask
+import threading
+
+app = Flask(__name__)
+
+@app.route('/')
+def ping():
+    return "Bot is alive!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    threading.Thread(target=run).start()
 
 # Flask server untuk health check
 flask_app = Flask(__name__)

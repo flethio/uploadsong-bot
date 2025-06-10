@@ -8,6 +8,8 @@ from flask import Flask
 from threading import Thread
 from flask import Flask
 import threading
+from keep_alive import keep_alive
+keep_alive()  # Panggil sebelum bot.run()
 
 app = Flask(__name__)
 
@@ -49,6 +51,11 @@ intents.message_content = True
 intents.members = True
 
 bot = commands.Bot(command_prefix="F ", intents=intents)
+
+@bot.event
+async def on_disconnect():
+    print("Bot disconnected! Attempting to reconnect...")
+    await bot.start(TOKEN)
 
 @bot.event
 async def on_ready():

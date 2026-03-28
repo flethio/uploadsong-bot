@@ -13,13 +13,13 @@
 
 # GDIPS Assistant Bot
 
-FreedomGDPS Assistant adalah bot Discord berbasis Embed yang dirancang untuk membantu komunitas Geometry Dash Private Server kamu!  
+GDIPS Assistant adalah bot Discord berbasis Embed yang dirancang untuk membantu komunitas Geometry Dash Private Server kamu!  
 Dibuat dan dikembangkan oleh **Fless**.
 
 ## Fitur
 - `/ping` — Cek latency bot
 - `/botinfo` — Info lengkap tentang bot
-- `/gdpsinfo` — Lihat level terbaru dari FreedomGDPS
+- `/gdpsinfo` — Lihat level terbaru dari GDIPS
 - `/help` — Daftar perintah bot
 
 ## Instalasi
